@@ -5,8 +5,8 @@
     <title>Welcome</title>
 </head>
 <body>
-<h1>Welcome,<span th:text="${user_id}"> User</span> </h1>
-
+<h1>Welcome,<span th:text="${name}"> User</span> </h1>
+<a th:href="@{vehicles}">Go to Vehicle</a>
 <a th:href="@{/logout}">Logout</a>
 
 

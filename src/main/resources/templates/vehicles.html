@@ -1,0 +1,39 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Vehicles</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Vehicles</h1>
+    <a class="btn btn-primary" th:href="@{/vehicles/new}">Add new Vehicle</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>color</th>
+            <th>model</th>
+            <th>manufacture</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="vehicle : ${vehicles}">
+            <td th:text="${vehicle.vehicle_id}">Id</td>
+            <td th:text="${vehicle.vehicle_nameName}">Name</td>
+            <td th:text="${vehicle.vehicle_color}">Color</td>
+            <td th:text="${vehicle.vehicle_model}">Model</td>
+            <td th:text="${vehicle.year_of_manufacture}">Year</td>
+            <td>
+                <a class="btn btn-info" th:href="@{/vehicles/{id}(id=${vehicle.id})}">Details</a>
+                <a class="btn btn-warning" th:href="@{/vehicles/edit/{id}(id=${vehicle.id})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/vehicles/delete/{id}(id=${vehicle.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

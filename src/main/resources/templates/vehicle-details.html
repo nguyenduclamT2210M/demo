@@ -11,28 +11,28 @@
         <tbody>
         <tr>
             <th>ID</th>
-            <td th:text="${vehicle.id}"></td>
+            <td th:text="${vehicle.vehicle_id}"></td>
         </tr>
         <tr>
             <th>Name</th>
             <td th:text="${vehicle.vehicle_nameName}"></td>
         </tr>
         <tr>
-            <th>Name</th>
-            <td th:text="${vehicle.getVehicle_color}"></td>
+            <th>Color</th>
+            <td th:text="${vehicle.vehicle_color}"></td>
         </tr>
         <tr>
-            <th>Name</th>
-            <td th:text="${vehicle.getVehicle_model()}"></td>
+            <th>Model</th>
+            <td th:text="${vehicle.vehicle_model}"></td>
         </tr>
         <tr>
-            <th>Name</th>
-            <td th:text="${vehicle.getYear_of_manufacture()}"></td>
+            <th>Year</th>
+            <td th:text="${vehicle.year_of_manufacture}"></td>
         </tr>
         <!-- Add more fields as necessary -->
         </tbody>
     </table>
-    <a class="btn btn-primary" th:href="@{/vehicle}">Back to Books</a>
+    <a class="btn btn-primary" th:href="@{/vehicles}">Back to vehicles</a>
 </div>
 </body>
 </html>

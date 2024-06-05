@@ -6,27 +6,35 @@ import java.util.Set;
 
 
 
-
+@Entity
 public class Member {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-
-    @Column(name = "user_id", length = 32)
-    private String userId;
+    @Column(name = "name", length = 32)
+    private String name;
 
     @Column(name = "password", nullable = false, length = 68)
     private String password;
 
     @Column(name = "is_active", nullable = false)
-    private boolean isActive;
+    private String isActive;
 
-
-
-    public String getUserId() {
-        return userId;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -37,11 +45,11 @@ public class Member {
         this.password = password;
     }
 
-    public boolean isActive() {
+    public String isActive() {
         return isActive;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(String active) {
         isActive = active;
     }
 

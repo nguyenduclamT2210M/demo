@@ -7,22 +7,22 @@
 <body>
 <div class="container">
     <h1>Add New Book</h1>
-    <form th:action="@{/vehicle}" th:object="${vehicle}" method="post">
+    <form th:action="@{/vehicles}" th:object="${vehicle}" method="post">
         <div class="form-group">
-            <label for="getVehicle_nameName">Name</label>
-            <input type="text" id="getVehicle_nameName" class="form-control" th:field="*{getVehicle_nameName}">
+            <label for="vehicle_nameName">Name</label>
+            <input type="text" id="vehicle_nameName" class="form-control" th:field="*{vehicle_nameName}">
         </div>
         <div class="form-group">
-            <label for="year_of_manufacture">Name</label>
+            <label for="year_of_manufacture">Year of manufacture</label>
             <input type="text" id="year_of_manufacture" class="form-control" th:field="*{year_of_manufacture}">
         </div>
         <div class="form-group">
-            <label for="getVehicle_model">Name</label>
-            <input type="text" id="getVehicle_model" class="form-control" th:field="*{getVehicle_model}">
+            <label for="vehicle_model">Model</label>
+            <input type="text" id="vehicle_model" class="form-control" th:field="*{vehicle_model}">
         </div>
         <div class="form-group">
-            <label for="getVehicle_color">Name</label>
-            <input type="text" id="getVehicle_color" class="form-control" th:field="*{getVehicle_color}">
+            <label for="vehicle_color">Color</label>
+            <input type="text" id="vehicle_color" class="form-control" th:field="*{vehicle_color}">
         </div>
         <button type="submit" class="btn btn-success">Save</button>
     </form>

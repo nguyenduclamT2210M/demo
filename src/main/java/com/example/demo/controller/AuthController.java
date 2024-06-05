@@ -25,12 +25,12 @@ public class AuthController {
 
     @PostMapping("/login")
     public String login(Model model,
-                        @RequestParam("user_id") String user_id,
+                        @RequestParam("name") String name,
                         @RequestParam("password") String password,
                         HttpSession session){
-        Optional<Member> optionalUser = memberRepository.findByUserId(user_id);
+        Optional<Member> optionalUser = memberRepository.findByName(name);
         if(optionalUser.isPresent() && optionalUser.get().getPassword().equals(password)){
-            session.setAttribute("user",optionalUser.get());
+            session.setAttribute("member",optionalUser.get());
             return "redirect:welcome";
         }else {
             model.addAttribute("error",
@@ -42,12 +42,12 @@ public class AuthController {
 
     @GetMapping("/welcome")
     public String welcome(HttpSession session, Model model){
-        Member user =  (Member)session.getAttribute("user");
+        Member user =  (Member)session.getAttribute("member");
         if(user!=null){
-            model.addAttribute("user_id",user.getUserId());
+            model.addAttribute("name",user.getName());
             return "result";
         }
-        return "redirect:/";
+        return "redirect:/index";
     }
     @GetMapping("/logout")
     public String logout(HttpSession session){

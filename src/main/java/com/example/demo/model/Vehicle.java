@@ -6,19 +6,10 @@ import jakarta.persistence.*;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "vehicle_id")
-    private Integer vehicle_id;
-
-    @Column(name = "vehicle_name", nullable = false, length = 64)
+    private Long vehicle_id;
     private String vehicle_nameName;
-
-    @Column(name = "vehicle_model", nullable = false, length = 10)
     private String vehicle_model;
-
-    @Column(name = "year_of_manufacture", nullable = false)
     private Integer year_of_manufacture;
-
-    @Column(name = "vehicle_color", length = 16)
     private String vehicle_color;
 
 
@@ -26,12 +17,20 @@ public class Vehicle {
 
     }
 
-    public Integer getVehicle_id() {
+    public Long getVehicle_id() {
         return vehicle_id;
     }
 
-    public void setVehicle_id(Integer vehicle_id) {
+    public void setVehicle_id(Long vehicle_id) {
         this.vehicle_id = vehicle_id;
+    }
+
+    public Vehicle(Long vehicle_id, String vehicle_nameName, String vehicle_model, Integer year_of_manufacture, String vehicle_color) {
+        this.vehicle_id = vehicle_id;
+        this.vehicle_nameName = vehicle_nameName;
+        this.vehicle_model = vehicle_model;
+        this.year_of_manufacture = year_of_manufacture;
+        this.vehicle_color = vehicle_color;
     }
 
     public String getVehicle_nameName() {

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Book</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Add New Book</h1>
+    <form th:action="@{/vehicle}" th:object="${vehicle}" method="post">
+        <div class="form-group">
+            <label for="getVehicle_nameName">Name</label>
+            <input type="text" id="getVehicle_nameName" class="form-control" th:field="*{getVehicle_nameName}">
+        </div>
+        <div class="form-group">
+            <label for="year_of_manufacture">Name</label>
+            <input type="text" id="year_of_manufacture" class="form-control" th:field="*{year_of_manufacture}">
+        </div>
+        <div class="form-group">
+            <label for="getVehicle_model">Name</label>
+            <input type="text" id="getVehicle_model" class="form-control" th:field="*{getVehicle_model}">
+        </div>
+        <div class="form-group">
+            <label for="getVehicle_color">Name</label>
+            <input type="text" id="getVehicle_color" class="form-control" th:field="*{getVehicle_color}">
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</div>
+</body>
+</html>
